@@ -3,7 +3,7 @@
 This works very simply.
 
 1. I press my own screenshot hotkey
-2. It runs a `take-screenshot.sh` that takes a screenshot, and commits & pushes it to a github repo, which is hosted on cloudflare pages. 
+2. It runs `take-screenshot.sh` that takes a screenshot, and pushes it to a github repo, which is hosted on cloudflare pages. 
 3. It copies the link it'll land up on, to clipboard.
 
 I built this because I wanted a free tool that takes screenshots on my mac and makes them available at a simple .png URL, forever, via cloudflare pages.
