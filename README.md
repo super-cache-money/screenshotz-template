@@ -13,5 +13,6 @@ This way I can easily embed it wherever I want, which is not possible with dropb
 # To set it up
 - fork this repo, and make it private, so people can't browse your screenshot folder (they can only see the ones you share with them via long, secure URL)
 - set up a hotkey to run `take-screenshot.sh`. I use **CAPS LOCK + 4**, via BetterTouchTool. You can probably also use Shortcuts (the Apple thing).
+- Connect your repo to cloudflare pages at your chosen URL - the free tier should be 👌. I think all the defaults work fine.
 
 There's a bit of a delay for the screenshot link to actually start working, unfortunately. I think it's like 20 sec or so. But the link gets copied instantly.
