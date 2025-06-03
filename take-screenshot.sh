@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# Create public/view directory if it doesn't exist
-mkdir -p public/view
+# Determine the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+
+# Create public/view directory inside the script directory if it doesn't exist
+mkdir -p "$SCRIPT_DIR/public/view"
 
 # Generate a secure random hash for the filename
 HASH=$(openssl rand -hex 16)
 FILENAME="$HASH.png"
-FILEPATH="public/view/$FILENAME"
+FILEPATH="$SCRIPT_DIR/public/view/$FILENAME"
 
 # Take a screenshot of a selected area
 echo "Select an area to capture..."
@@ -30,7 +33,8 @@ echo "URL copied to clipboard: $URL"
 
 # Commit and push the new screenshot file to the repository
 echo "Committing and pushing changes to the repository..."
-git add "$FILEPATH"
+cd "$SCRIPT_DIR"
+git add "public/view/$FILENAME"
 git commit -m "Add screenshot: $FILENAME"
 git push
 
